@@ -1,0 +1,24 @@
+MESH CODE_1 dimension 3 Elemtype Linear Nnode 2
+coordinates
+    1 0.677305E+01 0.715757E+01 0.724840E+01
+    2 0.974208E+01 0.115882E+02 0.943497E+01
+    3 0.105771E+02 0.988452E+01 0.123102E+02
+end coordinates
+elements
+       1       2       3
+       2       3       2
+end elements
+MESH CODE1_BOUNDING_BOX dimension 3 Elemtype Hexahedra Nnode 8
+coordinates
+    4 0.459358E+01 0.445651E+01 0.668240E+01
+    5 0.144799E+02 0.445651E+01 0.668240E+01
+    6 0.144799E+02 0.155698E+02 0.668240E+01
+    7 0.459358E+01 0.155698E+02 0.668240E+01
+    8 0.459358E+01 0.445651E+01 0.167524E+02
+    9 0.144799E+02 0.445651E+01 0.167524E+02
+   10 0.144799E+02 0.155698E+02 0.167524E+02
+   11 0.459358E+01 0.155698E+02 0.167524E+02
+end coordinates
+elements
+       3       8       9      10      11       4       5       6       7
+end elements

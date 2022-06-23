@@ -1,0 +1,61 @@
+
+
+        --------------------
+*    |- SUMMARY OF PARTITION
+        --------------------
+
+        # SUBDOMAINS=                   2
+        TOTAL # NODES=              22509 (INTERIOR+REPEATED BOUNDARY)
+
+        MIN. # NPOIN=               11103 (SUBDOMAIN     1)
+        MAX. # NPOIN=               11406 (SUBDOMAIN     2)
+        AVE. # NPOIN=               11254
+        MIN. # NELEM=               50661 (SUBDOMAIN     1)
+        MAX. # NELEM=               50661 (SUBDOMAIN     1)
+        AVE. # NELEM=               50661
+        LB     NELEM=               1.000
+        MIN. # NELEM(WEIGHT)=       50661 (SUBDOMAIN     1)
+        MAX. # NELEM(WEIGHT)=       50661 (SUBDOMAIN     1)
+        AVE. # NELEM(WEIGHT)=       50661
+        LB     NELEM(WEIGHT)=       1.000
+        MIN. # NBOUN=                7955 (SUBDOMAIN     1)
+        MAX. # NBOUN=                9419 (SUBDOMAIN     2)
+        AVE. # NBOUN=                8687
+        MIN. # NZDOM=              144581 (SUBDOMAIN     1)
+        MAX. # NZDOM=              146954 (SUBDOMAIN     2)
+        AVE. # NZDOM=              145767
+
+        MIN. # NNEIG=                   1 (SUBDOMAIN     1)
+        MAX. # NNEIG=                   1 (SUBDOMAIN     1)
+        AVE. # NNEIG=                   1
+        MIN. # NBBOU=                1168 (SUBDOMAIN     1)
+        MAX. # NBBOU=                1168 (SUBDOMAIN     1)
+        AVE. # NBBOU=                1168
+
+
+        -----------------------------
+     |- LOAD BALANCE & COMMUNICATIONS
+        -----------------------------
+
+         # % elements % boundaries % neighbors
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          1.000E+02  1.000E+02  1.000E+02
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00
+          0.000E+00  0.000E+00  0.000E+00

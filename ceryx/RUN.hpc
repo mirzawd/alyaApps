@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --job-name=ceryxtiny
+
+#SBATCH -t 02:00:00
+
+#SBATCH --qos=debug
+
+#SBATCH -n 24
+
+#SBATCH --output=Alya.out
+#SBATCH --error=Alya.err
+
+### run the case
+echo '--| ALYA: JOB SUBMITTED WITH SRUN AT: ' `date`
+time mpirun /home/bsc21/bsc21222/GIT-HOME/1056-cardiacBaseBondaryCondition/Executables/unix/Alya.x run_name
+echo '--| ALYA: JOB FINISHED AT: ' `date`
+
+
+
+
+

@@ -1,0 +1,45 @@
+
+
+
+        --------------------------
+     |- SOLIDZ OUTPUT FOR PROBLEM: heart
+        --------------------------
+
+
+
+        --------------------
+*    |- NODE CODES USED FOR DISPLACEMENT
+        --------------------
+
+
+        CODE=               6
+        CODE=               1  &    6
+        CODE=               2  &    6
+        CODE=               4  &    6
+
+
+        ------------------------
+*    |- BOUNDARY CODES USED FOR DISPLACEMENT
+        ------------------------
+
+
+ 
+
+ INITIAL COUPLING PARAMETERS FOR EP PROBLEM
+    Material 1
+       Model    = HUNTER
+      Cam      =  0.10000000E+001
+      Time     =  0.60000000E-001
+      Eta      =  0.14500000E+001
+      Hillc    =  0.30000000E+001
+      k        =  0.30000000E+000
+      Traction =  0.10000000E+007
+       Cell type 1 Ca0  =    7.6886546816061760E-002
+      Cell type 1 Ca50 =  0.11230233E+000
+      Cell type 1 pC50_ref =  0.69496113E+001
+       Cell type 2 Ca0  =    7.8194663368835862E-002
+      Cell type 2 Ca50 =  0.13069550E+000
+      Cell type 2 pC50_ref =  0.68837394E+001
+       Cell type 3 Ca0  =    4.1354653871222995E-002
+      Cell type 3 Ca50 =  0.76079308E-001
+      Cell type 3 pC50_ref =  0.71187334E+001

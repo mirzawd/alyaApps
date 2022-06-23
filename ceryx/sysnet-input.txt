@@ -1,0 +1,93 @@
+$$$
+$$$ sysnet input file
+$$$
+
+SYSNET_CYCLE
+     CAVITY: 1 $LV
+       BOUNDARY: 1
+$       PLANE NODSET 5285 10462 5041
+       PLANE NODSET 5285 5041 10462 
+$$       PLANE NODSET 5285 10462 
+     END_CAVITY
+     CAVITY: 2 $RV
+       BOUNDARY: 2
+$       PLANE NODSET 754 3152 5296
+       PLANE NODSET 754  5296 3152
+$$       PLANE NODSET 754 3152 
+     END_CAVITY
+
+     PARAMETERS
+        PRINT_FREQUENCY = 1
+        VALVES_MODEL
+	$
+	$ these are the reference values for opening and closing resistances, DON'T CHANGE
+	$
+          RES_MIN= 0.0075    $ mmHg s / mL 
+          RES_MAX= 75000     $ mmHg s / mL 
+	  CLOSING
+	    $
+	    $ how much closing: factor which multiplies the reference resistance
+	    $ if there is regurgitation, write a value LOWER than one (i.e. less resistance)
+	    $
+	    MITRAL=     0.00009
+	    AORTIC=     1.0
+	    TRICUSPID=  1.0
+	    PULMONIC=   1.0
+	  END_CLOSING
+	  OPENING
+	    $
+	    $ how much opening: factor which multiplies the reference resistance
+	    $ if there is valve stenosis, write a value LARGER than one (i.e. more  resistance)
+	    $
+	    MITRAL=     1.0
+	    AORTIC=     1.0
+	    TRICUSPID=  1.0
+	    PULMONIC=   1.0
+	  END_OPENING
+        END_VALVES_MODEL
+        ATRIAL_MODEL  $ left, right
+          BASE_VOLUMES=    28.0, 28.0   $ mL
+	  PAS_ELASTANCES=  0.09, 0.07   $ mmHg / mL
+	  ACT_ELASTANCES=  0.07, 0.06   $ mmHg / mL
+          TACTARS= 0.17, 0.17, 0.80, 0.97, 0.17, 0.17, 0.80, 0.97  $ nondimensional factors that multiply t_cycle, 4 each atria
+        END_ATRIAL_MODEL
+        CIRCUIT
+	  CSYSAR=  1.2           $ mL / mmHg     
+	  LSYSAR=  5.0E-3	 $ mmHg s^2 / mL 
+	  RSYSAR=  0.5	         $ mmHg s / mL   
+	  CSYSVEN= 6.0           $ mL / mmHg     
+	  LSYSVEN= 5.0E-4	 $ mmHg s^2 / mL 
+	  RSYSVEN= 0.26	         $ mmHg s / mL   
+	  CPULAR=  10.0          $ mL / mmHg     
+	  LPULAR=  5.0E-4	 $ mmHg s^2 / mL 
+	  RPULAR=  0.1	         $ mmHg s / mL   
+	  CPULVEN= 16.0          $ mL / mmHg     
+	  LPULVEN= 5.0E-4	 $ mmHg s^2 / mL 
+	  RPULVEN= 0.1	         $ mmHg s / mL   
+        END_CIRCUIT
+
+	INITIAL_PRESSURES    $ mmHg
+          SYS_ARTERIAL =   80.0 
+	  SYS_VENOUS   =   10.0 
+	  PUL_ARTERIAL =   30.0 
+	  PUL_VENOUS   =   10.0 
+          PERICARDIAC  =    0.0
+	END_INITIAL_PRESSURES
+
+        STARTUP_PHASE
+          PRINT_FREQUENCY = 5 
+	  TSYSTOLE  =  0.1875   $ systole nondimensional time factor that multiplies t_cycle
+          TISOSYS   =  0.0625   $ isovolumic contraction nondimensional time factor that multiplies t_cycle
+	  TDIASTOLE =  0.6875   $ diastole nondimensional time factor that multiplies t_cycle
+	  TISODIA   =  0.0625   $ isovolumic expansion nondimensional time factor that multiplies t_cycle
+          DELTIME   =  0.0001
+	  CYCLES    =  6
+	  EJECTION_FRACTION= 0.5
+          TIME_PRELOAD   =  0.5      $ duration of the preload phase in seconds
+$          TIME_PRELOAD   =  0.0      $ duration of the preload phase in seconds
+        END_STARTUP_PHASE
+
+      END_PARAMETERS
+     
+END_SYSNET_CYCLE
+

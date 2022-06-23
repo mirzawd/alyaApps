@@ -1,0 +1,14 @@
+Element types: TET04, 
+Number of boundary faces: 17374
+Number of volume cells: 101322
+Number of points: 21341
+
+============================
+Boundary codes
+============================
+endo_lv - 1
+endo_rv - 2
+epi_apex - 3
+epi_basal - 4
+epi_mid - 5
+top - 6

@@ -1,0 +1,27 @@
+# Converted from Alya
+# Ensight Gold Format
+#
+# Problem name: run_name-BOU1
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model: 1 run_name-BOU1.ensi.geo
+
+VARIABLE
+scalar per node: 1 INTRA run_name-BOU1.ensi.INTRA-******
+vector per node: 2 DISPL run_name-BOU1.ensi.DISPL-******
+
+TIME
+time set: 1
+number of steps: 3
+filename numbers: 
+ 0 10 20
+time values:
+0.    0.001 0.002
+time set: 2
+number of steps: 3
+filename numbers: 
+ 0 10 20
+time values:
+0.    0.001 0.002

@@ -1,0 +1,155 @@
+$------------------------------------------------------------------
+$ Exmedi data for trial 7 project 10 subject 5 alya-parameter-seed -479313687 ui-parameter-seed -1241213435
+$ Gender: Male
+$------------------------------------------------------------
+PHYSICAL_PROBLEM
+$------------------------------------------------------------
+    PROBLEM_DEFINITION
+
+   STARTING_POTENTIAL, TABLE
+        
+NSTIM= 16, NOBOU, CURDE 
+ -100, 9.52375, 10.0122, 11.2934, 0.3, 0.0, 0.01
+ -100, 11.2316, 11.8358, 14.0204, 0.3, 0.0, 0.01
+ -100, 9.89885, 13.3222, 12.8214, 0.3, 0.0, 0.01
+ -100, 9.11368, 14.0397, 9.48541, 0.3, 0.0, 0.01
+ -100, 9.52375, 10.0122, 11.2934, 0.3, 0.75, 0.01
+ -100, 11.2316, 11.8358, 14.0204, 0.3, 0.75, 0.01
+ -100, 9.89885, 13.3222, 12.8214, 0.3, 0.75, 0.01
+ -100, 9.11368, 14.0397, 9.48541, 0.3, 0.75, 0.01
+ -100, 8.01306, 9.36088, 10.1653, 0.3, 0.0, 0.01
+ -100, 8.37461, 7.05057, 12.1812, 0.3, 0.0, 0.01
+ -100, 11.8497, 6.25035, 10.8244, 0.3, 0.0, 0.01
+ -100, 12.318, 9.10541, 13.9849, 0.3, 0.0, 0.01
+ -100, 8.01306, 9.36088, 10.1653, 0.3, 0.75, 0.01
+ -100, 8.37461, 7.05057, 12.1812, 0.3, 0.75, 0.01
+ -100, 11.8497, 6.25035, 10.8244, 0.3, 0.75, 0.01
+ -100, 12.318, 9.10541, 13.9849, 0.3, 0.75, 0.01
+
+$NSTIM= 8, NOBOU, CURDE , REPEAT=10, CYCLELENGTH=0.75, OFFSET_FOR_PRELOAD= 0.49
+$-100, 9.52375, 10.0122, 11.2934, 0.3, 0.0, 0.01
+$-100, 11.2316, 11.8358, 14.0204, 0.3, 0.0, 0.01
+$-100, 9.89885, 13.3222, 12.8214, 0.3, 0.0, 0.01
+$-100, 9.11368, 14.0397, 9.48541, 0.3, 0.0, 0.01
+$-100, 8.01306, 9.36088, 10.1653, 0.3, 0.0, 0.01
+$-100, 8.37461, 7.05057, 12.1812, 0.3, 0.0, 0.01
+$-100, 11.8497, 6.25035, 10.8244, 0.3, 0.0, 0.01
+$-100, 12.318, 9.10541, 13.9849, 0.3, 0.0, 0.01
+
+   END_STARTING_POTENTIAL
+
+    PSEUDO_ECG= ON
+      NUMBER_ROOT=  3
+      FREQUENCY=  1
+      COORDS
+       -7.37081 22.8502  5.46487
+       5.44967  12.0349   -14.6282
+       33.6209  -5.14499 37.9945
+    END_PSEUDO
+
+    $GEO_COUPLING: LAGRANGIAN
+
+    END_PROBLEM_DEFINITION
+
+$------------------------------------------------------------
+   PROPERTIES
+        MATERIAL=1
+   CONTINUUM_MODEL
+      IN_DIFFUSION=  0.03 0.01 0.01
+   ENDCONTINNUM_MODEL
+   CELL_MODEL: OHARA INA_PASSINI
+      CM_CONST=  1.0 $[muF/cm2]
+   END_CELL_MODEL
+   INI_CELL
+$      STEADY_STATE_VARIABLE = CALCI
+$      BEATS= 1000
+      BEATS= 10
+      CYCLELENGTH= 750
+      MYOCYTE= MODIFIED
+$$      ON_DRUGS= NO
+      CONDUCTANCES
+          INAME= HUMAN
+          $ 1 GIto
+          1.0 1.0 0.6
+          $ 2 GKs
+          1.9485 1.9485 2.0265
+          $ 3 GK1
+          1.698 1.698 1.664
+          $ 4 GKr
+          1.2379 1.2379 1.3493
+          $ 5 GNa
+          0.981 0.981 0.981
+          $ 6 GNaL
+          2.371 2.371 2.371
+          $ 7 GNaCa
+          1.0 1.0 1.0
+          $ 8 gKb
+          1.0 1.0 1.0
+          $ 9 pCa
+          0.9949 0.9949 0.8755
+          $ 10 pNaK
+          1.0 1.0 0.94
+          $ 11 Calmodulin
+          1.0 1.0 1.07
+          $ 12 Jup
+          1.0 1.0 1.42
+          $ 13 Na0 Ca0 K0
+          0.7433 0.3062 0.5925
+          $ 14 IKatp
+          0.0 0.0 0.0
+      END_CONDUCTANCES
+   END_INI_CELL
+END_MATERIAL
+    END_PROPERTIES
+$------------------------------------------------------------
+    FIBER_MODEL:              FIELD=1
+    CELL_TYPE:                FIELD=2
+$------------------------------------------------------------
+END_PHYSICAL_PROBLEM
+
+$------------------------------------------------------------
+NUMERICAL_TREATMENT
+    CONSTANT_MATRIX
+    SAFETY_FACTOR=           1.0
+
+    TIMETREATMENT: IMPLICIT, CRANK
+
+    ALGEBRAIC_SOLVER
+        SOLVER:                CG
+        CONVERGENCE:           ITERA=1000, TOLER=1.0e-5, ADAPTIVE, RATIO=0.01
+        OUTPUT:                CONVERGENCE
+        PRECONDITIONER:        DIAGONAL
+    END_ALGEBRAIC_SOLVER
+
+END_NUMERICAL_TREATMENT
+
+$------------------------------------------------------------
+OUTPUT_&_POST_PROCESS
+    START_POSTPROCESS_AT STEP = 0
+    $POSTPROCESS  INTRA, STEPS=1
+
+    $POSTPROCESS  INTRA
+    POSTPROCESS  INTRA, MESH=BOU1
+$    POSTPROCESS  CALCI, MESH=BOU1
+$    POSTPROCESS  INTRA, MESH=LAX1
+$    POSTPROCESS  INTRA, MESH=LAX2
+    POSTPROCESS  INTRA, MESH=LAX3
+$    POSTPROCESS  INTRA, MESH=LAX4
+$    POSTPROCESS  INTRA, MESH=LAX5
+$    POSTPROCESS  INTRA, MESH=SAX1
+$    POSTPROCESS  INTRA, MESH=SAX2
+$    POSTPROCESS  INTRA, MESH=SAX3
+$    POSTPROCESS  INTRA, MESH=SAX4
+$    POSTPROCESS  INTRA, MESH=SAX5
+$    POSTPROCESS  INTRA, MESH=SAX6
+
+    $ELEMENT_SET
+    $   INTRA
+    $   CALCI
+    $ELEMENT_SET
+END_OUTPUT_&_POST-PROCESS
+
+$------------------------------------------------------------
+BOUNDARY_CONDITIONS, CONSTANT
+END_BOUNDARY_CONDITIONS
+$------------------------------------------------------------
