@@ -1,0 +1,68 @@
+$ Exmedi data for trial 7 project 10 subject 5 alya-parameter-seed -479313687 ui-parameter-seed -1241213435
+$------------------------------------------------------------
+DIMENSIONS
+  NODAL_POINTS=      21341
+  ELEMENTS=          101322
+  BOUNDARIES=        17374
+  SPACE_DIMENSIONS=  3
+  NODES=             4
+  SKEW_SYSTEMS=      0 
+  SLAVES=            0 
+  NO_SETS 
+  FIELDS = 2
+    FIELD= 1, DIMENSION= 3, NODES 
+    FIELD= 2, DIMENSION= 1, NODES 
+  END_FIELDS
+END_DIMENSIONS
+$------------------------------------------------------------
+STRATEGY
+  INTEGRATION_RULE:                OPEN
+  DOMAIN_INTEGRATION_POINTS:       1
+  BOUNDARY_ELEMENT:                ON
+  EXTRAPOLATE_BOUNDARY_CONDITIONS: ON
+  GROUPS:                          10
+END_STRATEGY
+$------------------------------------------------------------
+GEOMETRY
+  INCLUDE    ./msh/coarse.ELE.dat
+  INCLUDE    ./msh/coarse.ELTYPE.dat
+  INCLUDE    ./msh/coarse.NODE.dat
+  BOUNDARIES
+    INCLUDE  ./msh/coarse.BOUNDARIES.dat
+  END_BOUNDARIES
+  LELBO
+    INCLUDE  ./msh/coarse.LELBO.dat
+  END_LELBO 
+          MATERIALS, NUMBER=1
+            INCLUDE materials.in
+        END_MATERIALS
+END_GEOMETRY
+$------------------------------------------------------------
+SETS
+  BOUNDARIES
+    INCLUDE   ./msh/coarse.BC_NBOUN.dat
+  END_BOUNDARIES
+  NODES
+    INCLUDE   ./msh/coarse.NSET.dat
+  END_NODES
+  ELEMENTS
+    $ TODO: rename to coarse.AHA-CELLS.dat for consistency?
+    INCLUDE   ./msh/aha_cells.dat
+  END_ELEMENTS
+END_SETS
+$------------------------------------------------------------
+BOUNDARY_CONDITIONS
+  ON_BOUNDARIES
+    INCLUDE   ./msh/coarse.BC_NBOUN.dat
+  END_ON_BOUNDARIES
+END_BOUNDARY_CONDITIONS
+$------------------------------------------------------------
+FIELDS
+  FIELD= 1
+    INCLUDE   ./msh/coarse.FIELD-FIBERS.dat
+  END_FIELD
+  FIELD= 2
+    INCLUDE   ./msh/coarse.FIELD-CELLS.dat
+  END_FIELD
+END_FIELDS
+$------------------------------------------------------------

@@ -1,0 +1,41 @@
+   CARDIAC_CYCLE
+     CAVITY: 1 $LV
+       BOUNDARY: 1
+       PLANE NODSET 5285 10462 5041
+     END_CAVITY
+     CAVITY: 2 $RV
+       BOUNDARY: 2
+       PLANE NODSET 754 3152 5296
+     END_CAVITY
+
+     VARIABLE_PRESSURE
+       CYCLE=1
+        FOR_CAVITY=1
+        TZERO = 0.001          $ Duration of the preload phase
+        TPSTR = 0.001         $ Duration of the pre-stressing
+        PZERO = 1000.1         $ Pressure of the preload
+        PSTR0 = 0.0           $ Pressure of the pre-stress
+        GAINC = 5.0 0.2   $ Gain at errror and error derivative for PID at isovol contraction
+        CPRES = 0.00155908    $ Windkessel capacitance
+        RPRES = 1000.0         $ windkessel resistance
+        PART0 = 90000.0       $ Windkessel initialisation value
+        GAINR = 1.0 0.1   $ Gain at errror and error derivative for PID at isovol relaxation
+        PPOST = 1000.0         $ Pressure at which to stop isovol relaxation and initiate filling
+       END_CYCLE
+       CYCLE=2
+        FOR_CAVITY=2
+        TZERO = 0.001          $ Duration of the preload phase
+        TPSTR = 0.001         $ Duration of the pre-stressing
+        PZERO = 1000.1         $ Pressure of the preload
+        PSTR0 = 0.0           $ Pressure of the pre-stress
+        GAINC = 5.0 0.2   $ Gain at errror and error derivative for PID at isovol contraction
+        CPRES = 0.00155908    $ Windkessel capacitance
+        RPRES = 100.0         $ windkessel resistance
+        PART0 = 40000.0       $ Windkessel initialisation value
+        GAINR = 1.0 0.1   $ Gain at errror and error derivative for PID at isovol relaxation
+        PPOST = 1000.0         $ Pressure at which to stop isovol relaxation and initiate filling
+       END_CYCLE
+     END_VARIABLE_PRESSURE
+
+   END_CARDIAC_CYCLE
+

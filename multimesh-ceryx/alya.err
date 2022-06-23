@@ -1,0 +1,128 @@
+remove dlb/3.2 (PATH)
+Removing mkl version 2021.4.0
+Removing tbb version 2021.4.0
+Removing mpi version 2021.4.0
+Removing 2021.4.0 version compilers
+Removing compiler-rt version 2021.4.0
+Loading 2021.4.0 version compilers
+Loading compiler-rt version 2021.4.0
+Loading mpi version 2021.4.0
+Loading mkl version 2021.4.0
+Loading tbb version 2021.4.0
+load dlb/3.2 (PATH): DLB 3.2
+DLB[s04r1b75:2702870]: dlb 3.2
+DLB[s04r1b75:2702871]: dlb 3.2
+DLB[s04r1b75:2702873]: dlb 3.2
+DLB[s04r1b75:2702872]: dlb 3.2
+DLB[s04r1b75:2702874]: dlb 3.2
+DLB[s04r1b75:2702875]: dlb 3.2
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 779924.0 ON s04r1b75 CANCELLED AT 2022-06-21T12:59:25 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 779924 ON s04r1b75 CANCELLED AT 2022-06-21T12:59:25 DUE TO TIME LIMIT ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007F40A4C3C400  Unknown               Unknown  Unknown
+Alya.x             000000000132B4EE  Unknown               Unknown  Unknown
+Alya.x             000000000131890B  Unknown               Unknown  Unknown
+Alya.x             000000000132C6A7  Unknown               Unknown  Unknown
+Alya.x             00000000013463CF  Unknown               Unknown  Unknown
+Alya.x             00000000010A75C9  Unknown               Unknown  Unknown
+Alya.x             000000000137F021  Unknown               Unknown  Unknown
+Alya.x             0000000001316515  Unknown               Unknown  Unknown
+Alya.x             000000000040ACD8  Unknown               Unknown  Unknown
+Alya.x             0000000000E31685  Unknown               Unknown  Unknown
+Alya.x             00000000004082E3  Unknown               Unknown  Unknown
+Alya.x             0000000000407616  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007F40A4C28493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007FAACB168400  Unknown               Unknown  Unknown
+Alya.x             000000000138B9CE  Unknown               Unknown  Unknown
+Alya.x             0000000001300912  Unknown               Unknown  Unknown
+Alya.x             0000000001323F22  Unknown               Unknown  Unknown
+Alya.x             00000000013186BE  Unknown               Unknown  Unknown
+Alya.x             000000000132C637  Unknown               Unknown  Unknown
+Alya.x             00000000013463CF  Unknown               Unknown  Unknown
+Alya.x             00000000010A75C9  Unknown               Unknown  Unknown
+Alya.x             000000000137F021  Unknown               Unknown  Unknown
+Alya.x             0000000001316515  Unknown               Unknown  Unknown
+Alya.x             000000000040ACD8  Unknown               Unknown  Unknown
+Alya.x             0000000000E31685  Unknown               Unknown  Unknown
+Alya.x             00000000004082E3  Unknown               Unknown  Unknown
+Alya.x             0000000000407616  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007FAACB154493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007F4624EE7400  Unknown               Unknown  Unknown
+libpthread-2.28.s  00007F462580A45E  pthread_barrier_w     Unknown  Unknown
+libdlb.so          00007F46276CD7DF  Unknown               Unknown  Unknown
+libdlb.so          00007F46276C03C9  Unknown               Unknown  Unknown
+Alya.x             000000000074F477  Unknown               Unknown  Unknown
+Alya.x             00000000009AFA20  Unknown               Unknown  Unknown
+Alya.x             0000000000E3141F  Unknown               Unknown  Unknown
+Alya.x             000000000040AEF7  Unknown               Unknown  Unknown
+Alya.x             00000000004075B5  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007F4624ED3493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007FE1244AE400  Unknown               Unknown  Unknown
+libpthread-2.28.s  00007FE124DD145E  pthread_barrier_w     Unknown  Unknown
+libdlb.so          00007FE126C947DF  Unknown               Unknown  Unknown
+libdlb.so          00007FE126C873C9  Unknown               Unknown  Unknown
+Alya.x             000000000074F477  Unknown               Unknown  Unknown
+Alya.x             00000000009AFA20  Unknown               Unknown  Unknown
+Alya.x             0000000000E3141F  Unknown               Unknown  Unknown
+Alya.x             000000000040AEF7  Unknown               Unknown  Unknown
+Alya.x             00000000004075B5  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007FE12449A493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007F7727B8D400  Unknown               Unknown  Unknown
+libpthread-2.28.s  00007F77284B045E  pthread_barrier_w     Unknown  Unknown
+libdlb.so          00007F772A3737DF  Unknown               Unknown  Unknown
+libdlb.so          00007F772A3663C9  Unknown               Unknown  Unknown
+Alya.x             000000000074F477  Unknown               Unknown  Unknown
+Alya.x             00000000009AFA20  Unknown               Unknown  Unknown
+Alya.x             0000000000E3141F  Unknown               Unknown  Unknown
+Alya.x             000000000040AEF7  Unknown               Unknown  Unknown
+Alya.x             00000000004075B5  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007F7727B79493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+Alya.x             000000000143921B  Unknown               Unknown  Unknown
+libc-2.28.so       00007F7AB469D400  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB561A5CF  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB56194FA  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB5549BA4  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB55653A4  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB55416AA  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB562AAC7  Unknown               Unknown  Unknown
+libmpi.so.12.0.0   00007F7AB54E7712  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F7AB6B86A50  mpi_allreduce_        Unknown  Unknown
+Alya.x             00000000007EEC80  Unknown               Unknown  Unknown
+Alya.x             000000000134751A  Unknown               Unknown  Unknown
+Alya.x             00000000010A75C9  Unknown               Unknown  Unknown
+Alya.x             000000000137F021  Unknown               Unknown  Unknown
+Alya.x             0000000001316515  Unknown               Unknown  Unknown
+Alya.x             000000000040ACD8  Unknown               Unknown  Unknown
+Alya.x             0000000000E31685  Unknown               Unknown  Unknown
+Alya.x             00000000004082E3  Unknown               Unknown  Unknown
+Alya.x             0000000000407616  Unknown               Unknown  Unknown
+Alya.x             00000000004074E2  Unknown               Unknown  Unknown
+libc-2.28.so       00007F7AB4689493  __libc_start_main     Unknown  Unknown
+Alya.x             00000000004073EE  Unknown               Unknown  Unknown

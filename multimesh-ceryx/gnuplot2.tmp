@@ -1,0 +1,3 @@
+load './gnuplot.tmp'
+pause 2
+load './gnuplot2.tmp'

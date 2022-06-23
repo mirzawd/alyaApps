@@ -1,0 +1,63 @@
+$------------------------------------------------------------------
+$ Ker data for trial 7 project 10 subject 5 alya-parameter-seed -479313687 ui-parameter-seed -1241213435
+$------------------------------------------------------------
+$-------------------------------------------------------------
+  PHYSICAL_PROBLEM
+    PROPERTIES
+    END_PROPERTIES
+
+    FIBERS LONGITUDINAL       FIELD=1
+    CELL_TYPE:                FIELD=2
+
+    COUPLING
+        SOLIDZ EXMEDI
+    END_COUPLING
+
+      ECCOUPLING_SCHEME
+         MATERIAL: 1
+         MODEL: HUNTER
+         CAL50: 0.0005
+      END_ECCOUPLING_SCHEME
+
+  END_PHYSICAL_PROBLEM
+$-------------------------------------------------------------
+  NUMERICAL_TREATMENT 
+     MESH
+       DIVISION=0
+       EXTENDED_GRAPH = OFF
+     END_MESH
+  ELSEST
+        STRATEGY: BIN
+        NUMBER:   10,10
+        DATAF: LINKED_LIST
+  END_ELSEST
+END_NUMERICAL_TREATMENT
+$-------------------------------------------------------------
+OUTPUT_&_POST_PROCESS
+  ON_LAST_MESH
+
+  WITNESS, MESHES, NUMBER=2
+     BOUNDARY,                                 NAME=BOU1
+$     PLANE:  A=1 ,B=0 ,C=0, X=7,Y=10.0,Z=11.7, NAME=LAX1
+$     PLANE:  A=1 ,B=0 ,C=0, X=8,Y=10.0,Z=11.7, NAME=LAX2
+     PLANE:  A=1 ,B=0 ,C=0, X=9,Y=10.0,Z=11.7, NAME=LAX3
+$     PLANE:  A=1 ,B=0 ,C=0, X=10,Y=10.0,Z=11.7, NAME=LAX4
+$     PLANE:  A=1 ,B=0 ,C=0, X=11,Y=10.0,Z=11.7, NAME=LAX5
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=9.0, NAME=SAX1
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=10.0, NAME=SAX2
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=11.0, NAME=SAX3
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=12.0, NAME=SAX4
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=13.0, NAME=SAX5
+$     PLANE:  A=0 ,B=0 ,C=1, X=11,Y=10.0,Z=14.0, NAME=SAX6
+
+     $BOX:    XMIN=0.1,XMAX=0.2,YMIN=0.1,YMAX=0.2,ZMIN=0.1,ZMAX=0.2, NAME=MESH4
+     $ELEMENT_SET= 3                                                 NAME=MESH5
+  END_WITNESS
+
+  STEPS= 100
+$   POSTPROCESS CODNO
+$   POSTPROCESS CODBO
+$   POSTPROCESS LBSET
+$   POSTPROCESS LNSET 
+END_OUTPUT_&_POST_PROCESS
+$-------------------------------------------------------------

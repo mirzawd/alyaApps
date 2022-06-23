@@ -1,0 +1,22 @@
+#!/bin/bash
+#BSUB -J em
+#BSUB -o alya.out
+#BSUB -e alya.err
+#BSUB -n 32     #multiple of 16
+#BSUB -W 08:00
+###BSUB -q debug  #faster queue for testing, 1h time limit
+#BSUB -R "span[ptile=16]"  #16 tasks per node, nodes have 16 cores
+
+module purge
+module load intel/2017.4 impi/2017.4 mkl/2017.4
+
+
+_t0=`date '+%s'`
+echo `date -Iseconds` starting
+# TODO: make both Alya path & case name (?) parameterizable
+mpirun /gpfs/projects/bsc21/WORK-CONSTA/ALYA/alya-nord3/Executables/unix/Alya.x run_name
+echo `date -Iseconds` finished
+_tT=`date '+%s'`
+echo $(( $_tT - $_t0 )) seconds elapsed
+# ./alya-clean
+

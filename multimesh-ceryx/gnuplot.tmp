@@ -1,0 +1,30 @@
+reset
+set multiplot
+set size noratio 1.0,2.0
+set format y '10^{%2T}'
+set origin 0.00,0.50
+set size   0.50,0.50
+set xlabel 'Cumulative Iterations'
+set ylabel 'Residual'
+set log y
+plot 'run_name_sld.sld.cvg' u 7 t 'DISPL' w l, 'run_name_sld.sld.cvg' u 8 t 'FORCE' w l, 'run_name_sld.sld.cvg' u 9 t 'ENERG' w l 
+unset format
+set origin 0.50,0.50
+set size   0.50,0.50
+set xlabel 'Cumulative iterations'
+set ylabel 'Inner iterations'
+unset log y 
+plot 'run_name_sld.sld.cvg' u 3 t 'N-R' w l 
+set origin 0.00,0.00
+set size   0.50,0.50
+set xlabel 'Cumulative iterations'
+set ylabel 'Min and Max'
+unset log y 
+plot 'run_name_sld.sld.cvg' u 10 t 'MAX. DISPL.' w l 
+set origin 0.50,0.00
+set size   0.50,0.50
+set xlabel 'Cumulative iterations'
+set ylabel 'Solver iterations'
+unset log y 
+plot 'run_name_sld.sld.cvg' u 4 t 'SOLVER' w l
+unset multiplot 
